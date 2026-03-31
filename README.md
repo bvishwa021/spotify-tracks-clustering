@@ -1,4 +1,4 @@
-# 🎵 Spotify Tracks Clustering
+# Spotify Tracks Clustering
 ### Teaching a machine to hear genres it was never told existed — through K-Means clustering on Spotify audio features.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white)
@@ -24,24 +24,23 @@ End-to-end unsupervised ML pipeline that segments 100K+ Spotify tracks into inte
 
 ---
 
-## Cluster Archetypes (Example)
+## Cluster Archetypes 
 
 | Cluster | Name | Signature |
 |---|---|---|
-| 0 | 🎻 Classical / Orchestral | High acousticness, high instrumentalness, low energy |
-| 1 | 💃 High-Energy Dance / EDM | High danceability, high energy, high instrumentalness |
-| 2 | 🎤 Hip-Hop / Rap | High speechiness, high danceability, low acousticness |
-| 3 | 🌿 Acoustic Chill / Folk | High acousticness, low energy, low speechiness |
-| 4 | 🔥 Energetic Rock | High energy, low acousticness, low instrumentalness |
-| 5 | ☀️ Upbeat Pop | High valence, moderate danceability, moderate energy |
-
-> These are illustrative.
+| 0 | 🎵 Live & Brazilian Rhythms | Liveness ↑↑, acoustic texture |
+| 1 | 💃 Danceable & Upbeat | Danceability ↑, valence ↑ |
+| 2 | 🎻 Serene Instrumentals | Acousticness ↑, instrumentalness ↑, energy ↓ |
+| 3 | 🌿 Acoustic & Melodic | Acousticness ↑, energy ↓ |
+| 4 | 🔥 High-Energy Rock & Metal | Energy ↑, tempo ↑, acousticness ↓ |
+| 5 | 🎤 Spoken Word & Vocal-Heavy | Speechiness ↑↑ |
+| 6 | 🎛️ Electronic Instrumentals | Instrumentalness ↑, acousticness ↓ |
 
 ---
 
 ## Key Design Decisions
 
-- **Log1p on `instrumentalness` + `speechiness`** — both are zero-inflated; log-transform spreads the distribution so scaling has real signal to work with
+- **Log1p on `instrumentalness`, `speechiness`, `acousticness`, `liveness`** — all four are zero-inflated; log-transform spreads the distribution so scaling has real signal to work with
 - **StandardScaler over MinMaxScaler** — K-Means uses Euclidean distance; StandardScaler prevents high-range features like `tempo` from dominating
 - **PCA for visualization only** — clustering runs on all 8 original features to preserve full signal; PCA is only used to see the clusters in 2D
 - **Silhouette + Elbow together** — elbow is visual and subjective; silhouette gives an objective numeric confirmation of the best k
@@ -61,11 +60,10 @@ Download the dataset from [Kaggle](https://www.kaggle.com/datasets/maharshipandy
 ---
 
 ## Results
->This will be finalised once project is completed.
 
-- **Optimal k:** [fill in]
-- **Best silhouette score:** [fill in]
-- **Cluster–genre alignment:** [fill in — e.g. "Classical and Hip-Hop show near-pure membership; Pop and R&B overlap, reflecting shared audio properties"]
+- **Optimal k:** 7
+- **Best silhouette score:** 0.2065 (at k=7)
+- **Cluster–genre alignment:** Serene Instrumentals and Electronic Instrumentals show near-pure genre membership (classical/ambient and techno/house respectively). Danceable & Upbeat is the most diverse cluster as high danceability is a cross-genre property shared by latin, reggae, and pop styles.
 
 ---
 
@@ -81,4 +79,4 @@ Download the dataset from [Kaggle](https://www.kaggle.com/datasets/maharshipandy
 
 ---
 
-**Vishwa B.** · [LinkedIn](#) · [GitHub](#) · [Portfolio](#)
+**Vishwa B.** · [LinkedIn](www.linkedin.com/in/vishwa-brahmbhatt-404427280) 

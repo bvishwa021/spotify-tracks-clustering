@@ -1,0 +1,8 @@
+cluster,archetype,track_count,danceability,energy,speechiness,acousticness,instrumentalness,liveness,valence,tempo
+0,Live and Brazilian Rhythms,8421,-0.266,0.431,-0.057,-0.067,-0.297,2.532,0.148,0.034
+1,Danceable & Upbeat,33149,0.775,0.319,-0.141,-0.276,-0.448,-0.278,0.905,-0.136
+2,Serene Instrumentals,7737,-1.122,-1.77,-0.355,1.507,2.153,-0.325,-1.031,-0.601
+3,Acoustic & Melodic,22445,-0.275,-1.053,-0.4,1.105,-0.451,-0.307,-0.39,-0.308
+4,High-Energy Rock & Metal,24203,-0.548,0.687,-0.076,-0.79,-0.413,-0.105,-0.398,0.578
+5,Spoken Word & Vocal-Heavy,6274,0.563,0.119,3.216,0.17,-0.425,0.359,0.2,-0.073
+6,Electronic Instrumentals,11771,0.095,0.489,-0.123,-0.738,1.993,-0.204,-0.521,0.191
